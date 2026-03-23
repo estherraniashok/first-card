@@ -1,25 +1,24 @@
-/* Remove default spacing */
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* 🚫 prevents scrolling */
+  overflow: hidden;
   background: black;
 }
 
-/* Center everything perfectly */
+/* Center layout */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100dvh; /* ✅ FIX for mobile height */
-  touch-action: none; /* 🚫 stops unwanted touch movement */
+  height: 100dvh;
+  touch-action: none;
 }
 
-/* Main container */
+/* 🔥 Bigger container */
 .container {
   position: relative;
-  width: 90vw;        /* responsive width */
-  max-width: 400px;   /* limit size on large screens */
+  width: 95vw;       /* BIG on phone */
+  max-width: 480px;  /* still clean on laptop */
 }
 
 /* Invitation image */
@@ -29,7 +28,7 @@ body {
   border-radius: 12px;
 }
 
-/* Scratch canvas */
+/* Canvas */
 canvas {
   position: absolute;
   top: 0;

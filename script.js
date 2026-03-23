@@ -4,25 +4,23 @@ const img = document.getElementById("invite");
 
 let isDrawing = false;
 
-// Wait for everything to load
 window.addEventListener("load", () => {
 
-  // Set canvas size equal to image
   canvas.width = img.clientWidth;
   canvas.height = img.clientHeight;
 
-  // 🎨 GOLD LAYER
+  // GOLD LAYER
   ctx.fillStyle = "#D4AF37";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // ❤️ HEART SHAPE (WIDER)
+  // ❤️ WIDE HEART
   ctx.globalCompositeOperation = "destination-in";
 
   let x = canvas.width / 2;
-  let y = canvas.height / 2 -3;
+  let y = canvas.height / 2;
 
-  let width = 120;   // 🔥 increase for more width ↔️
-  let height = 80;  // 🔥 increase for more height ↕️
+  let width = canvas.width / 3;   // responsive width ❤️↔️
+  let height = canvas.height / 4; // responsive height ❤️↕️
 
   ctx.beginPath();
   ctx.moveTo(x, y);
@@ -36,10 +34,10 @@ window.addEventListener("load", () => {
   ctx.closePath();
   ctx.fill();
 
-  // ✨ TEXT
+  // TEXT
   ctx.globalCompositeOperation = "source-over";
   ctx.fillStyle = "white";
-  ctx.font = "bold 20px Arial";
+  ctx.font = "bold 22px Arial";
   ctx.textAlign = "center";
   ctx.fillText("Scratch ❤️", canvas.width / 2, canvas.height / 2 + 60);
 
@@ -47,14 +45,14 @@ window.addEventListener("load", () => {
   ctx.globalCompositeOperation = "destination-out";
 });
 
-// ✨ SCRATCH FUNCTION
+// SCRATCH
 function scratch(x, y) {
   ctx.beginPath();
-  ctx.arc(x, y, 25, 0, Math.PI * 2);
+  ctx.arc(x, y, 30, 0, Math.PI * 2);
   ctx.fill();
 }
 
-// 📱 TOUCH EVENTS
+// TOUCH (mobile)
 canvas.addEventListener("touchstart", () => isDrawing = true);
 
 canvas.addEventListener("touchend", () => isDrawing = false);
@@ -69,7 +67,7 @@ canvas.addEventListener("touchmove", (e) => {
   scratch(x, y);
 });
 
-// 🖱️ MOUSE EVENTS
+// MOUSE (PC)
 canvas.addEventListener("mousedown", () => isDrawing = true);
 
 canvas.addEventListener("mouseup", () => isDrawing = false);
