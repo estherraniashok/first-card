@@ -1,28 +1,35 @@
-body {
+/* Remove default spacing */
+html, body {
   margin: 0;
   padding: 0;
+  overflow: hidden; /* 🚫 prevents scrolling */
   background: black;
+}
+
+/* Center everything perfectly */
+body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100dvh; /* ✅ FIX for mobile height */
+  touch-action: none; /* 🚫 stops unwanted touch movement */
 }
 
-/* Container */
+/* Main container */
 .container {
   position: relative;
-  width: 90vw;
-  max-width: 400px;
+  width: 90vw;        /* responsive width */
+  max-width: 400px;   /* limit size on large screens */
 }
 
-/* Invitation Image */
+/* Invitation image */
 .invite-img {
   width: 100%;
   display: block;
   border-radius: 12px;
 }
 
-/* Canvas (Scratch layer) */
+/* Scratch canvas */
 canvas {
   position: absolute;
   top: 0;
